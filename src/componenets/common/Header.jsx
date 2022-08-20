@@ -6,7 +6,7 @@ const Header = (props) => {
 
   return (
     <>
-      <div>5witter</div>
+      <div>Project Name</div>
       {isLogin ? (
         <Link to='/profile/'>
           <div>Profile</div>
