@@ -4,6 +4,7 @@ import { useState } from "react";
 import { apis } from "../../shared/axios";
 import RESP from "../../server/response";
 import { parseHashtags, notEmptyCheck } from "../../shared/regex";
+import ImgView from "./ImgView";
 
 // TODO change to 정사각형
 const Create = (props) => {
@@ -16,8 +17,6 @@ const Create = (props) => {
 
   const [isLoading, setIsLoading] = useState(true);
   const [fileUrls, setFileUrls] = useState([]);
-  const [currImg, setCurrImg] = useState(0);
-  const [lastImg, setLastImg] = useState(0);
 
   // TODO blob 알아보기
   const onSubmitHandler = async ({ content, files }) => {
@@ -65,20 +64,10 @@ const Create = (props) => {
     const urlList = fileList.map((file) => URL.createObjectURL(file));
 
     setFileUrls([...urlList]);
-    setCurrImg(0);
-    setLastImg(files.length - 1);
 
     if (files.length !== 0) {
       setIsLoading(false);
     }
-  };
-
-  const onPrevHandler = () => {
-    setCurrImg((prev) => (prev - 1 < 0 ? lastImg : prev - 1));
-  };
-
-  const onNextHandler = () => {
-    setCurrImg((prev) => (prev + 1 > lastImg ? 0 : prev + 1));
   };
 
   return (
@@ -113,20 +102,7 @@ const Create = (props) => {
             onChange={onImageHandler}
           />
         </div>
-        {!isLoading ? (
-          <div>
-            <button type='button' onClick={onPrevHandler}>
-              prev
-            </button>
-            <img src={fileUrls[currImg]} alt='img' width='300px' />
-            <div>
-              {currImg + 1}/ {lastImg + 1}
-            </div>
-            <button type='button' onClick={onNextHandler}>
-              next
-            </button>
-          </div>
-        ) : null}
+        {!isLoading ? <ImgView imgUrls={fileUrls} /> : null}
       </form>
     </>
   );
