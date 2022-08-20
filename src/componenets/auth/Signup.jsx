@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import RESP from "../../server/response";
 import { apis } from "../../shared/axios";
-import { login } from "../../shared/paths";
+import { LOGIN_PATH } from "../../shared/paths";
 import { emailCheck, usernameCheck, pwCheck } from "../../shared/regex";
 
 const Signup = (props) => {
@@ -29,7 +29,7 @@ const Signup = (props) => {
     //     result,
     //     status: { message },
     //   },
-    // } = apis.signup(email, username, password);
+    // } = await apis.signup(email, username, password);
 
     // success
     const {
@@ -49,7 +49,7 @@ const Signup = (props) => {
       return;
     }
 
-    navigate(login);
+    navigate(LOGIN_PATH);
   };
 
   return (
