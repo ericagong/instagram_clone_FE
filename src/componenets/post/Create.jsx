@@ -1,8 +1,5 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import styled from "styled-components";
 
 import { apis } from "../../shared/axios";
 import RESP from "../../server/response";
@@ -21,8 +18,6 @@ const Create = (props) => {
   const [fileUrls, setFileUrls] = useState([]);
   const [currImg, setCurrImg] = useState(0);
   const [lastImg, setLastImg] = useState(0);
-
-  const navigate = useNavigate();
 
   // TODO blob 알아보기
   const onSubmitHandler = async ({ content, files }) => {
