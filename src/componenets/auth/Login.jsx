@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
+import { SIGNUP_PATH } from "../../shared/paths";
 import RESP from "../../server/response";
 import { apis } from "../../shared/axios";
 import { login } from "../../modules/redux/user";
@@ -58,6 +59,9 @@ const Login = (props) => {
 
   return (
     <>
+      <Link to={SIGNUP_PATH}>
+        <div>Go Signup</div>
+      </Link>
       <form onSubmit={handleSubmit(onSubmitHandler)}>
         <div>
           <label htmlFor='email'>email</label>
