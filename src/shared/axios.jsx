@@ -41,9 +41,18 @@ export const apis = {
 
   // post : CRUD, like/unlike
   // CRUD
-  create_post: (content, imagefiles, hashtags) =>
-    // TODO  create에 Blob 써보기
-    api.post("/api/post", { content, imagefiles, hashtags }),
+  create_post: (content, files, hashtags) => {
+    // const contentBlob = new Blob([json], { type: "application/json" });
+    const formData = new FormData();
+    formData.append("content", content);
+    formData.append("files", files);
+    formData.append("hashtags", hashtags);
+    return api.post("/api/post", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+  },
   get_posts: (pageNum, pageLimit) =>
     api.get(`/api/posts?pageNum=${pageNum}&pageLimit=${pageLimit}`),
   edit_post: (id, content, hashtags) => {

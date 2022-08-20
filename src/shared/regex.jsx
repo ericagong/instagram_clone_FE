@@ -37,6 +37,15 @@ export const noSpaceCheck = (value) => {
   return !regExp.test(value);
 };
 
+export const notEmptyCheck = (value) => {
+  return value.replace(/\s+/g, "") !== "";
+};
+
+export const parseHashtags = (value) => {
+  let regExp = /[#]+[A-Za-z0-9-_]+/g;
+  return value.match(regExp);
+};
+
 // export const nickCheck = (nick) => {
 //   let regExp = /^[0-9a-zA-Zㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
 
