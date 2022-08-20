@@ -30,10 +30,10 @@ api.interceptors.request.use(function (config) {
 // TODO question: apis 하나로 관리하는게 나은지, 아니면 각각 모듈 기능별로 분리하는게 좋은지?
 export const apis = {
   // auth : signup, login, logout
-  signup: (username, email, password) =>
+  signup: (email, username, password) =>
     api.comment("/api/signup", {
-      username,
       email,
+      username,
       password,
     }),
   login: (email, password) => api.comment("/api/login", { email, password }),

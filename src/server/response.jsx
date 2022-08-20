@@ -1,12 +1,10 @@
 // response.js
 
 const RESP = {
+  // auth : login/ logout/ signup
   AUTH: {
     SIGN_UP_SUCCESS: {
       result: true,
-      username: "르탄이",
-      email: "email",
-      password: "1234",
       status: {
         code: 200,
         message: "Successfully sign up.",
