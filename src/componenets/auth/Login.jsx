@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import RESP from "../../server/response";
 import { apis } from "../../shared/axios";
 import { login } from "../../modules/redux/user";
-import { LOGIN_PATH } from "../../shared/paths";
+import { HOME_PATH } from "../../shared/paths";
 
 const Login = (props) => {
   const {
@@ -49,11 +49,11 @@ const Login = (props) => {
     }
 
     // TODO check Authorization or authorization
-    localStorage.setItem("AcessToken", Authorization);
+    localStorage.setItem("AccessToken", Authorization);
 
     dispatch(login());
 
-    navigate(LOGIN_PATH);
+    navigate(HOME_PATH);
   };
 
   return (
