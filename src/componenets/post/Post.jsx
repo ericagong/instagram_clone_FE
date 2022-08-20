@@ -1,11 +1,16 @@
 import { useState } from "react";
 
+import { apis } from "../../shared/axios";
+import RESP from "../../server/response";
 import ImgView from "./ImgView";
 import UserProfile from "../../elements/UserProfile";
+import Like from "../../elements/Like";
 
 // edit delete
 // TODO content hashtag Link
+// TODO Like, Comment, More component 분리!
 const Post = ({
+  id,
   username,
   userprofile,
   content,
@@ -22,6 +27,8 @@ const Post = ({
   const [showComment, setShowComment] = useState(false);
   const [showMore, setShowMore] = useState(false);
 
+  const [isFollowing, setIsFollowing] = useState(isfollowing);
+
   const toggleComment = () => {
     setShowComment((prev) => !prev);
   };
@@ -29,8 +36,6 @@ const Post = ({
   const toggleMore = () => {
     setShowMore((prev) => !prev);
   };
-
-  const toggleLike = () => {};
 
   const clickFollow = () => {};
 
@@ -56,15 +61,7 @@ const Post = ({
         </div>
         <div>
           <div>
-            {!isliked ? (
-              <button type='button' onClick={toggleLike}>
-                Like
-              </button>
-            ) : (
-              <button type='button' onClick={toggleLike}>
-                Unlike
-              </button>
-            )}
+            <Like isliked={isliked} />
             <div>{numlikes}</div>
           </div>
           <div>
@@ -115,6 +112,9 @@ const Post = ({
             ) : null}
           </div>
         </div>
+      </div>
+      <div style={{ marginBottom: "30px" }}>
+        {showComment ? <div>Comments List!</div> : null}
       </div>
     </>
   );

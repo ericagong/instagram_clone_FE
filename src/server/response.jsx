@@ -173,6 +173,24 @@ const RESP = {
         code: 200,
         message: "Succesfullly edited post.",
       },
+      output: {
+        id: 1,
+        username: "erica",
+        userprofile: "https://joeschmoe.io/api/v1/jane",
+        content: "blablablabla. this is content of the post #good #Good",
+        imageUrls: [
+          "https://img.freepik.com/free-photo/peak-bamboo-lijiang-rural-mist_1417-410.jpg?size=626&ext=jpg",
+          "https://img.freepik.com/free-photo/landmark-forest-tourism-sunrise-famous-ancient_1417-1194.jpg?size=626&ext=jpg",
+          "https://www.freepik.com/free-photos-vectors/rice-field",
+        ],
+        hashtags: ["#good", "#Good"],
+        time: "2022/08/19",
+        ismine: true,
+        isliked: true,
+        isfollowing: true,
+        numcomments: 5,
+        numlikes: 10,
+      },
     },
     EDIT_FAIL: {
       result: false,
@@ -335,6 +353,13 @@ const RESP = {
       status: {
         code: 200,
         message: "Succesfullly edited comment.",
+      },
+      output: {
+        id: 5,
+        username: "john",
+        userprofile: "https://joeschmoe.io/api/v1/jane",
+        content: "blablablabla. this is content of the post #good #hello",
+        ismine: false,
       },
     },
     EDIT_FAIL: {

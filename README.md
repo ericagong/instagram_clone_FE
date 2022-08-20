@@ -25,8 +25,8 @@
 [ ] update
 [ ] delete
 
-[ ] like
-[ ] unlike
+[x] like
+[x] unlike
 
 ### Follow
 
