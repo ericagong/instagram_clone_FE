@@ -19,7 +19,7 @@ const Create = (props) => {
   const [fileUrls, setFileUrls] = useState([]);
 
   // TODO blob 알아보기
-  const onSubmitHandler = async ({ content, files }) => {
+  const submitForm = async ({ content, files }) => {
     // const contentBlob = new Blob([json], { type: "application/json" });
     // const formData = new FormData();
     // formData.append("content", content);
@@ -56,7 +56,7 @@ const Create = (props) => {
     reset({ content: "", files: [] });
   };
 
-  const onImageHandler = async (e) => {
+  const changeImg = async (e) => {
     setIsLoading(true);
 
     const files = e.target.files;
@@ -72,7 +72,7 @@ const Create = (props) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmitHandler)}>
+      <form onSubmit={handleSubmit(submitForm)}>
         <div>
           <input
             type='text'
@@ -99,7 +99,7 @@ const Create = (props) => {
             type='file'
             accept='image/jpg, image/png, image/jpeg'
             multiple
-            onChange={onImageHandler}
+            onChange={changeImg}
           />
         </div>
         {!isLoading ? <ImgView imgUrls={fileUrls} /> : null}

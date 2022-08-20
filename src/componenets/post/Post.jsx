@@ -22,21 +22,23 @@ const Post = ({
   const [showComment, setShowComment] = useState(false);
   const [showMore, setShowMore] = useState(false);
 
-  const onToggleCommentHandler = () => {
+  const toggleComment = () => {
     setShowComment((prev) => !prev);
   };
 
-  const onToggleMoreHandler = () => {
+  const toggleMore = () => {
     setShowMore((prev) => !prev);
   };
 
-  const onFollowUserHandler = () => {};
+  const toggleLike = () => {};
 
-  const onUnfollowUserHandler = () => {};
+  const clickFollow = () => {};
 
-  const onEditHandler = () => {};
+  const clickUnfollow = () => {};
 
-  const onDeleteHandler = () => {};
+  const clickEdit = () => {};
+
+  const clickDelete = () => {};
 
   return (
     <>
@@ -55,19 +57,23 @@ const Post = ({
         <div>
           <div>
             {!isliked ? (
-              <button type='button'>Like</button>
+              <button type='button' onClick={toggleLike}>
+                Like
+              </button>
             ) : (
-              <button type='button'>Unlike </button>
+              <button type='button' onClick={toggleLike}>
+                Unlike
+              </button>
             )}
             <div>{numlikes}</div>
           </div>
           <div>
             {!showComment ? (
-              <button type='button' onClick={onToggleCommentHandler}>
+              <button type='button' onClick={toggleComment}>
                 Show Comments
               </button>
             ) : (
-              <button type='button' onClick={onToggleCommentHandler}>
+              <button type='button' onClick={toggleComment}>
                 Hide Comments
               </button>
             )}
@@ -75,32 +81,32 @@ const Post = ({
           </div>
           <div>
             {!showMore ? (
-              <button type='button' onClick={onToggleMoreHandler}>
+              <button type='button' onClick={toggleMore}>
                 Show more
               </button>
             ) : (
-              <button type='button' onClick={onToggleMoreHandler}>
+              <button type='button' onClick={toggleMore}>
                 Hide
               </button>
             )}
             {showMore ? (
               <div>
                 {!ismine && !isfollowing ? (
-                  <button type='button' onClick={onFollowUserHandler}>
+                  <button type='button' onClick={clickFollow}>
                     Follow this user
                   </button>
                 ) : null}
                 {!ismine && isfollowing ? (
-                  <button type='button' onClick={onUnfollowUserHandler}>
+                  <button type='button' onClick={clickUnfollow}>
                     Unfollow this user
                   </button>
                 ) : null}
                 {ismine ? (
                   <div>
-                    <button type='button' onClick={onEditHandler}>
+                    <button type='button' onClick={clickEdit}>
                       Edit this post
                     </button>
-                    <button type='button' onClick={onDeleteHandler}>
+                    <button type='button' onClick={clickDelete}>
                       Delete this post
                     </button>
                   </div>
