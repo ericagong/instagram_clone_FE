@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
-import RESP from "../../server/response";
-import { apis } from "../../shared/axios";
 import { LOGIN_PATH } from "../../shared/paths";
+import { apis } from "../../shared/axios";
+import RESP from "../../server/response";
 import { emailCheck, usernameCheck, pwCheck } from "../../shared/regex";
 
 const Signup = (props) => {
@@ -54,6 +54,9 @@ const Signup = (props) => {
 
   return (
     <>
+      <Link to={LOGIN_PATH}>
+        <div>Go Sign in</div>
+      </Link>
       <form onSubmit={handleSubmit(onSubmitHandler)}>
         <div>
           <label htmlFor='email'>email</label>
