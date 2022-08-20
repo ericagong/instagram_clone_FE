@@ -521,6 +521,11 @@ const RESP = {
         code: 200,
         message: "Follow username.",
       },
+      username: "erica",
+      userprofile: "https://joeschmoe.io/api/v1/jane",
+      numposts: 10,
+      numfollowing: 100,
+      numfollowers: 10,
     },
     GET_INFO_FAIL: {
       result: false,

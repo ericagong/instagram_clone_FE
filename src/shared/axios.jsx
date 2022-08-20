@@ -85,7 +85,8 @@ export const apis = {
     api.get("api/hashtag/rank");
   },
 
-  // profile : get posts, following, follower list
+  // profile : get info, posts, following, follower list
+  get_profile_info: (username) => api.get(`/api/profile/info/${username}`),
   get_profile_posts: (username, pageNum, pageLimit) =>
     api.get(
       `/api/profile/posts?username=${username}&pageNum=${pageNum}&pageLimit=${pageLimit}`
