@@ -49,28 +49,28 @@ const RESP = {
     // post CRUD
     CREATE_SUCCESS: {
       result: true,
-      stauts: {
+      status: {
         code: 200,
         message: "Successfully created new post.",
       },
     },
     CREATE_FAIL: {
       result: false,
-      stauts: {
+      status: {
         code: 400,
         message: "Fail to create new post.",
       },
     },
     CREATE_FAIL_AUTH: {
       result: false,
-      stauts: {
+      status: {
         code: 401,
         message: "No Right to create new post. Please login!",
       },
     },
     GET_SUCCESS: {
       result: true,
-      stauts: {
+      status: {
         code: 200,
         message: "Successfully get posts.",
       },
@@ -162,7 +162,7 @@ const RESP = {
     },
     GET_FAIL: {
       result: false,
-      stauts: {
+      status: {
         code: 400,
         message: "Fail to get posts. Wrong page number.",
       },
@@ -176,14 +176,14 @@ const RESP = {
     },
     EDIT_FAIL: {
       result: false,
-      stauts: {
+      status: {
         code: 400,
         message: "Fail to edit post.",
       },
     },
     EDIT_FAIL_AUTH: {
       result: false,
-      stauts: {
+      status: {
         code: 401,
         message: "No Right to edit post.",
       },
@@ -197,14 +197,14 @@ const RESP = {
     },
     DELETE_FAIL: {
       result: false,
-      stauts: {
+      status: {
         code: 400,
         message: "Already deleted post.",
       },
     },
     DELETE_FAIL_AUTH: {
       result: false,
-      stauts: {
+      status: {
         code: 401,
         message: "No Right to delete post.",
       },
@@ -221,14 +221,14 @@ const RESP = {
     },
     LIKE_FAIL: {
       result: false,
-      stauts: {
+      status: {
         code: 400,
         message: "Already deleted post.",
       },
     },
     LIKE_FAIL_AUTH: {
       result: false,
-      stauts: {
+      status: {
         code: 401,
         message: "No Right to like the post. Please login.",
       },
@@ -242,14 +242,14 @@ const RESP = {
     },
     UNLIKE_FAIL: {
       result: false,
-      stauts: {
+      status: {
         code: 400,
         message: "Already deleted post.",
       },
     },
     UNLIKE_FAIL_AUTH: {
       result: false,
-      stauts: {
+      status: {
         code: 401,
         message: "No Right to unlike the post. Please login.",
       },
@@ -261,21 +261,21 @@ const RESP = {
     // post CRUD
     CREATE_SUCCESS: {
       result: true,
-      stauts: {
+      status: {
         code: 200,
         message: "Successfully created new comment.",
       },
     },
     CREATE_FAIL: {
       result: false,
-      stauts: {
+      status: {
         code: 400,
         message: "Fail to create new comment.",
       },
     },
     GET_SUCCESS: {
       result: true,
-      stauts: {
+      status: {
         code: 200,
         message: "Successfully get comments.",
       },
@@ -325,7 +325,7 @@ const RESP = {
     },
     GET_FAIL: {
       result: false,
-      stauts: {
+      status: {
         code: 400,
         message: "Fail to get comments. Wrong page number.",
       },
@@ -339,14 +339,14 @@ const RESP = {
     },
     EDIT_FAIL: {
       result: false,
-      stauts: {
+      status: {
         code: 400,
         message: "Fail to edit comment.",
       },
     },
     EDIT_FAIL_AUTH: {
       result: false,
-      stauts: {
+      status: {
         code: 401,
         message: "No Right to edit comment.",
       },
@@ -360,14 +360,14 @@ const RESP = {
     },
     DELETE_FAIL: {
       result: false,
-      stauts: {
+      status: {
         code: 400,
         message: "Already deleted comment.",
       },
     },
     DELETE_FAIL_AUTH: {
       result: false,
-      stauts: {
+      status: {
         code: 401,
         message: "No Right to delete comment.",
       },
@@ -378,7 +378,7 @@ const RESP = {
   SEARCH: {
     GET_SUCCESS: {
       result: true,
-      stauts: {
+      status: {
         code: 200,
         message: "Successfully get posts.",
       },
@@ -457,7 +457,7 @@ const RESP = {
     },
     GET_FAIL: {
       result: false,
-      stauts: {
+      status: {
         code: 400,
         message: "Fail to get posts. Wrong page number.",
       },
@@ -549,7 +549,7 @@ const RESP = {
     },
     GET_POSTS_SUCCESS: {
       result: true,
-      stauts: {
+      status: {
         code: 200,
         message: "Successfully get posts.",
       },
@@ -642,7 +642,7 @@ const RESP = {
     },
     GET_MY_POSTS_SUCCESS: {
       result: true,
-      stauts: {
+      status: {
         code: 200,
         message: "Successfully get posts.",
       },
@@ -735,14 +735,14 @@ const RESP = {
     },
     GET_POST_FAIL: {
       result: false,
-      stauts: {
+      status: {
         code: 401,
         message: "No right to get posts.",
       },
     },
     GET_FOLLOWING_SUCCESS: {
       result: true,
-      stauts: {
+      status: {
         code: 200,
         message: "Successfully get following list.",
       },
@@ -787,7 +787,7 @@ const RESP = {
     },
     GET_MY_FOLLOWING_SUCCESS: {
       result: true,
-      stauts: {
+      status: {
         code: 200,
         message: "Successfully get following list.",
       },
@@ -832,14 +832,14 @@ const RESP = {
     },
     GET_FOLLOWING_FAIL: {
       result: false,
-      stauts: {
+      status: {
         code: 401,
         message: "No right to get following list.",
       },
     },
     GET_FOLLOWERS_SUCCESS: {
       result: true,
-      stauts: {
+      status: {
         code: 200,
         message: "Successfully get follower list.",
       },
@@ -884,7 +884,7 @@ const RESP = {
     },
     GET_MY_FOLLOWERS_SUCCESS: {
       result: true,
-      stauts: {
+      status: {
         code: 200,
         message: "Successfully get follower list.",
       },
@@ -929,7 +929,7 @@ const RESP = {
     },
     GET_FOLLOWERS_FAIL: {
       result: false,
-      stauts: {
+      status: {
         code: 401,
         message: "No right to get follower list.",
       },

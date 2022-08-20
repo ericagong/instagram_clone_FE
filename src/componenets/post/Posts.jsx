@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import { apis } from "../../shared/axios";
 import RESP from "../../server/response";
+import Post from "./Post";
 
 // TODO dispatch to create
 // TODO infinite scroll 구현 with currPageNum
@@ -40,18 +41,22 @@ const Posts = (props) => {
     const { posts, ...rest } = output;
 
     setAllPosts([...allPosts, ...posts]);
-    setPageInfo([...pageInfo, ...rest]);
+    setPageInfo({ pageInfo, ...rest });
   };
 
   useEffect(() => {
     getPosts();
   }, []);
 
-  // const postList = allPosts.map((post) =>
+  const postList = allPosts.map((post) => <Post key={post.id} {...post} />);
 
   // )
 
-  return <>Posts</>;
+  return (
+    <>
+      <div>{postList}</div>
+    </>
+  );
 };
 
 export default Posts;
