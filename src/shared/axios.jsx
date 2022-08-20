@@ -17,9 +17,9 @@ const api = axios.create({
 // 3가지 방법 중 실무에서는 무엇 사용?
 // 조건부 분기
 api.interceptors.request.use(function (config) {
-  // TODO parsing 로직 다시 짜기
-  // const auth = localStorage.getItem('AccessToken');
-  // const refresh = localStorage.getItem('RefreshToken');
+  const auth = localStorage.getItem("AccessToken");
+  config.headers.common["Authentication"] = auth;
+
   // const accessToken = document.cookie.split("=")[1];
   // const refreshToken = document.cookie.split("=")[1];
   // config.headers.common["Authentication"] = `${accessToken}`;
