@@ -19,6 +19,19 @@ export const pwCheck = (pw) => {
   return regExp.test(pw);
 };
 
+export const isHashtagCheck = (value) => {
+  let regExp = /#([0-9a-zA-Z가-힣])/;
+
+  return regExp.test(value);
+};
+
+export const oneHashtagCheck = (value) => {
+  let regExp = /#/g;
+  let cnt = value.match(regExp).length;
+
+  return cnt === 1;
+};
+
 export const noSpaceCheck = (value) => {
   let regExp = /\s/g;
   return !regExp.test(value);

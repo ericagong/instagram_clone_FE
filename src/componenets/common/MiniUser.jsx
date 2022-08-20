@@ -33,22 +33,14 @@ const MiniUser = (props) => {
     const {
       result,
       status: { message },
-      username,
-      userprofile,
-      numposts,
-      numfollowing,
-      numfollowers,
+      output,
     } = RESP.PROFILE.GET_INFO_SUCCESS;
 
     // fail
     // const {
     //   result,
     //   status: { message },
-    //   username,
-    //   userprofile,
-    //   numposts,
-    //   numfollowing,
-    //   numfollowers,
+    // 	output,
     // } = RESP.PROFILE.GET_INFO_FAIL;
 
     if (!result) {
@@ -58,11 +50,7 @@ const MiniUser = (props) => {
 
     setInfo({
       ...info,
-      username,
-      userprofile,
-      numposts,
-      numfollowing,
-      numfollowers,
+      ...output,
     });
   };
 
