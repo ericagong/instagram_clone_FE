@@ -21,7 +21,7 @@
 ### Post
 
 [x] create
-[ ] read
+[x] read
 [ ] update
 [ ] delete
 
@@ -30,8 +30,8 @@
 
 ### Follow
 
-[ ] follow
-[ ] unfollow
+[x] follow
+[x] unfollow
 
 ### Comment
 
