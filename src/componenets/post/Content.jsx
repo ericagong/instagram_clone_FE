@@ -9,6 +9,8 @@ import LikeBtn from "../../elements/LikeBtn";
 
 // TODO 중복 해시태그?
 // TODO reducer C, U, D 연결
+// TODO 더보기 버튼 위로 빼기!!
+// TODO store값 변경 안해주고 그냥 프론트 독단으로 처리해도 되는지?
 const Content = ({
   id,
   content,
@@ -78,6 +80,7 @@ const Content = ({
       alert(message);
 
       setIsFollowing(true);
+      setShowMore((prev) => !prev);
     } else {
       // const resp = await apis.unfollow_user(username);
       // const { result, status: { message } } = resp.data;
@@ -101,6 +104,7 @@ const Content = ({
       alert(message);
 
       setIsFollowing(false);
+      setShowMore((prev) => !prev);
     }
   };
 
@@ -115,7 +119,7 @@ const Content = ({
     setInEdit((prev) => !prev);
   };
 
-  // TODO storer값 변경 안해주고 그냥 프론트 독단으로 처리해도 되는지?
+  // TODO store값 변경 안해주고 그냥 프론트 독단으로 처리해도 되는지?
   const submitForm = async ({ editContent }) => {
     const hashtags = parseHashtags(editContent);
 
@@ -156,6 +160,7 @@ const Content = ({
     setCurrContent(editContent);
   };
 
+  // TODO store값 변경 안해주고 그냥 프론트 독단으로 처리해도 되는지?
   const clickDelete = async () => {
     // const resp = await apis.delete_post(id);
     // const {
