@@ -11,9 +11,7 @@ import LikeBtn from "../../elements/LikeBtn";
 // TODO reducer C, U, D 연결
 const Content = ({
   id,
-  username,
   content,
-  time,
   ismine,
   isfollowing,
   isliked,
@@ -39,6 +37,7 @@ const Content = ({
   const [showComment, setShowComment] = useState(false);
   const [showMore, setShowMore] = useState(false);
   const [inEdit, setInEdit] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
   const [currContent, setCurrContent] = useState(content);
 
   const toggleComment = () => {
@@ -157,104 +156,139 @@ const Content = ({
     setCurrContent(editContent);
   };
 
-  const clickDelete = () => {};
+  const clickDelete = async () => {
+    // const resp = await apis.delete_post(id);
+    // const {
+    //   result,
+    // 	status: { message },
+    // } = resp.data;
+
+    // success
+
+    const {
+      result,
+      status: { message },
+    } = RESP.POST.DELETE_SUCCESS;
+
+    // fail
+    // const {
+    //   result,
+    //   status: { message },
+    // } = RESP.POST.DELETE_FAIL;
+
+    // const {
+    //   result,
+    //   status: { message },
+    // } = RESP.POST.DELETE_FAIL_AUTH;
+
+    // TODO
+    if (!result) {
+      alert(message);
+      return;
+    }
+
+    // TODO output 기반 store의 posts값 변경하기?
+    setIsDeleted(true);
+  };
 
   return (
     <>
-      <div>
-        <div>{username}</div>
-        <div>{time}</div>
-      </div>
-      <div>
-        {!inEdit ? (
-          <div>{currContent}</div>
-        ) : (
-          <form onSubmit={handleSubmit(submitForm)}>
-            <div>
-              <input
-                type='text'
-                id='editContent'
-                {...register("editContent", {
-                  required: "You should write content to edit post.",
-                  maxLength: {
-                    value: 1000,
-                    message: "Content should be shorter than 1000 characters.",
-                  },
-                  validate: {
-                    notEmpty: (value) =>
-                      notEmptyCheck(value) || "Content cannot be empty string.",
-                  },
-                })}
-              />
-              {errors.editContent ? (
-                <div>{errors.editContent.message}</div>
-              ) : null}
-            </div>
-            <button type='submit'>Save Post</button>
-            <button type='button' onClick={toggleEdit}>
-              Cancel
-            </button>
-          </form>
-        )}
-      </div>
-      <div>
+      {!isDeleted ? (
         <div>
-          <LikeBtn isliked={isliked} isLogin={isLogin} />
-          <div>{numlikes}</div>
-        </div>
-        <div>
-          {!showComment ? (
-            <button type='button' onClick={toggleComment}>
-              Show Comments
-            </button>
-          ) : (
-            <button type='button' onClick={toggleComment}>
-              Hide Comments
-            </button>
-          )}
-          <div>{numcomments}</div>
-        </div>
-        <div>
-          {!showMore ? (
-            <button type='button' onClick={toggleMore}>
-              Show more
-            </button>
-          ) : (
-            <button type='button' onClick={toggleMore}>
-              Hide
-            </button>
-          )}
-          {showMore ? (
-            <div>
-              {!ismine && !isFollowing ? (
-                <button type='button' onClick={toggleFollow}>
-                  Follow this user
-                </button>
-              ) : null}
-              {!ismine && isFollowing ? (
-                <button type='button' onClick={toggleFollow}>
-                  Unfollow this user
-                </button>
-              ) : null}
-              {ismine ? (
+          <div>
+            {!inEdit ? (
+              <div>{currContent}</div>
+            ) : (
+              <form onSubmit={handleSubmit(submitForm)}>
                 <div>
-                  <button type='button' onClick={toggleEdit}>
-                    Edit this post
-                  </button>
-                  <button type='button' onClick={clickDelete}>
-                    Delete this post
-                  </button>
+                  <input
+                    type='text'
+                    id='editContent'
+                    {...register("editContent", {
+                      required: "You should write content to edit post.",
+                      maxLength: {
+                        value: 1000,
+                        message:
+                          "Content should be shorter than 1000 characters.",
+                      },
+                      validate: {
+                        notEmpty: (value) =>
+                          notEmptyCheck(value) ||
+                          "Content cannot be empty string.",
+                      },
+                    })}
+                  />
+                  {errors.editContent ? (
+                    <div>{errors.editContent.message}</div>
+                  ) : null}
+                </div>
+                <button type='submit'>Save Post</button>
+                <button type='button' onClick={toggleEdit}>
+                  Cancel
+                </button>
+              </form>
+            )}
+          </div>
+          <div>
+            <div>
+              <LikeBtn isliked={isliked} isLogin={isLogin} />
+              <div>{numlikes}</div>
+            </div>
+            <div>
+              {!showComment ? (
+                <button type='button' onClick={toggleComment}>
+                  Show Comments
+                </button>
+              ) : (
+                <button type='button' onClick={toggleComment}>
+                  Hide Comments
+                </button>
+              )}
+              <div>{numcomments}</div>
+            </div>
+            <div>
+              {!showMore ? (
+                <button type='button' onClick={toggleMore}>
+                  Show more
+                </button>
+              ) : (
+                <button type='button' onClick={toggleMore}>
+                  Hide
+                </button>
+              )}
+              {showMore ? (
+                <div>
+                  {!ismine && !isFollowing ? (
+                    <button type='button' onClick={toggleFollow}>
+                      Follow this user
+                    </button>
+                  ) : null}
+                  {!ismine && isFollowing ? (
+                    <button type='button' onClick={toggleFollow}>
+                      Unfollow this user
+                    </button>
+                  ) : null}
+                  {ismine ? (
+                    <div>
+                      <button type='button' onClick={toggleEdit}>
+                        Edit this post
+                      </button>
+                      <button type='button' onClick={clickDelete}>
+                        Delete this post
+                      </button>
+                    </div>
+                  ) : null}
                 </div>
               ) : null}
             </div>
-          ) : null}
+          </div>
+          <div>
+            <div style={{ marginBottom: "30px" }}>
+              {showComment ? <div>Comments List!</div> : null}
+            </div>
+          </div>
         </div>
-      </div>
-      <div>
-        <div style={{ marginBottom: "30px" }}>
-          {showComment ? <div>Comments List!</div> : null}
-        </div>
-      </div>
+      ) : null}
     </>
   );
 };
