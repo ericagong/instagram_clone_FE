@@ -555,7 +555,7 @@ const RESP = {
       result: true,
       status: {
         code: 200,
-        message: "Follow username.",
+        message: "Successfully get info.",
       },
       output: {
         username: "erica",
@@ -586,8 +586,8 @@ const RESP = {
         posts: [
           {
             id: 1,
-            username: "erica",
-            userprofile: "https://joeschmoe.io/api/v1/jane",
+            username: "Eunchae",
+            userprofile: "https://joeschmoe.io/api/v1/eunchae",
             content: "blablablabla. this is content of the post #good #Good",
             imageUrls: [
               "https://img.freepik.com/free-photo/peak-bamboo-lijiang-rural-mist_1417-410.jpg?size=626&ext=jpg",
@@ -605,7 +605,7 @@ const RESP = {
           {
             id: 2,
             username: "Eunchae",
-            userprofile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/eunchae",
             content: "blablablabla. this is content of the post #good #vibe",
             imageUrls: [
               "https://www.freepik.com/free-vector/summer-forest-landscape-with-lake-night_27576496.htm#query=natural%20scenery&position=5&from_view=keyword",
@@ -621,8 +621,8 @@ const RESP = {
           },
           {
             id: 3,
-            username: "Ash",
-            userprofile: "https://joeschmoe.io/api/v1/random",
+            username: "Eunchae",
+            userprofile: "https://joeschmoe.io/api/v1/eunchae",
             content:
               "blablablabla. this is content of the post #onlytags #hello",
             imageUrls: [],
@@ -636,8 +636,8 @@ const RESP = {
           },
           {
             id: 4,
-            username: "john",
-            userprofile: "https://joeschmoe.io/api/v1/random",
+            username: "Eunchae",
+            userprofile: "https://joeschmoe.io/api/v1/eunchae",
             content: "blablablabla. this is content of the post #onlytags",
             imageUrls: [],
             hashtags: ["#onlytags"],
@@ -651,8 +651,8 @@ const RESP = {
           {
             id: 5,
             username: "test1",
-            userprofile: "https://joeschmoe.io/api/v1/random",
-            content: "blablablabla. this is content of the post.",
+            username: "Eunchae",
+            userprofile: "https://joeschmoe.io/api/v1/eunchae",
             imageUrls: [],
             hashtags: [],
             time: "2022/08/19",
@@ -697,8 +697,8 @@ const RESP = {
           },
           {
             id: 2,
-            username: "Eunchae",
-            userprofile: "https://joeschmoe.io/api/v1/random",
+            username: "erica",
+            userprofile: "https://joeschmoe.io/api/v1/jane",
             content: "blablablabla. this is content of the post #good #vibe",
             imageUrls: [
               "https://www.freepik.com/free-vector/summer-forest-landscape-with-lake-night_27576496.htm#query=natural%20scenery&position=5&from_view=keyword",
@@ -714,8 +714,8 @@ const RESP = {
           },
           {
             id: 3,
-            username: "Ash",
-            userprofile: "https://joeschmoe.io/api/v1/random",
+            username: "erica",
+            userprofile: "https://joeschmoe.io/api/v1/jane",
             content:
               "blablablabla. this is content of the post #onlytags #hello",
             imageUrls: [],
@@ -729,8 +729,8 @@ const RESP = {
           },
           {
             id: 4,
-            username: "john",
-            userprofile: "https://joeschmoe.io/api/v1/random",
+            username: "erica",
+            userprofile: "https://joeschmoe.io/api/v1/jane",
             content: "blablablabla. this is content of the post #onlytags",
             imageUrls: [],
             hashtags: ["#onlytags"],
@@ -743,8 +743,8 @@ const RESP = {
           },
           {
             id: 5,
-            username: "test1",
-            userprofile: "https://joeschmoe.io/api/v1/random",
+            username: "erica",
+            userprofile: "https://joeschmoe.io/api/v1/jane",
             content: "blablablabla. this is content of the post.",
             imageUrls: [],
             hashtags: [],

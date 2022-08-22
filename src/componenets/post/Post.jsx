@@ -8,7 +8,7 @@ import Content from "./Content";
 // edit delete
 // TODO content hashtag Link
 // TODO code spliting!
-const Post = ({ userprofile, imageUrls, username, time, isme, ...rest }) => {
+const Post = ({ userprofile, imageUrls, username, time, ismine, ...rest }) => {
   return (
     <>
       <div style={{ marginBottom: "30px" }}>
@@ -21,11 +21,11 @@ const Post = ({ userprofile, imageUrls, username, time, isme, ...rest }) => {
         </div>
         <div>
           <UserProfile userprofile={userprofile} />
-          <Username isme={isme} username={username} />
+          <Username isme={ismine} username={username} />
           <div>{time}</div>
         </div>
         <div>
-          <Content isme={isme} {...rest} />
+          <Content ismine={ismine} {...rest} />
         </div>
       </div>
     </>

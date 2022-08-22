@@ -5,14 +5,17 @@ import RESP from "../../server/response";
 import UserProfile from "../../elements/UserProfile";
 import Username from "../../elements/Username";
 
-const UserDetail = (props) => {
+const UserDetail = ({ username }) => {
   const [info, setInfo] = useState({
-    username: "",
+    username: username,
     userprofile: "",
+    numposts: 0,
+    numfollowing: 0,
+    numfollowers: 0,
   });
 
   const getProfileInfo = async () => {
-    // const resp = await apis.get_profile_info("");
+    // const resp = await apis.get_profile_info(username);
     // const {
     //   result,
     //   status: { message },
@@ -57,7 +60,7 @@ const UserDetail = (props) => {
       <div>
         UserDetail
         <UserProfile userprofile={info.userprofile} />
-        <Username isme='true' username={info.username} />
+        <Username isme={!username ? true : false} username={info.username} />
       </div>
     </>
   );
