@@ -44,7 +44,7 @@
 
 [x] get info
 [x] get posts
-[ ] get following
+[x] get following
 [ ] get followers
 
 ### Search

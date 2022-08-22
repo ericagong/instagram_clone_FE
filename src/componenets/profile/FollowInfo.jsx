@@ -12,6 +12,7 @@ const Following = ({
   numfollowing,
   numfollowers,
   isme,
+  curr,
 }) => {
   const [isFollowing, setIsFollowing] = useState(true);
 
@@ -76,7 +77,7 @@ const Following = ({
             <div>Following {numfollowing}</div>
             <div>Followers {numfollowers}</div>
           </div>
-          {isme ? (
+          {isme && curr === "Followings" ? (
             <div>
               {!isFollowing ? (
                 <button type='button' onClick={toggleFollow}>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import Posts from "../post/Posts";
-import Followings from "./Followings";
+import FollowList from "./FollowList";
 
 const Content = ({ username }) => {
   const [curr, setCurr] = useState("Posts");
@@ -30,8 +30,12 @@ const Content = ({ username }) => {
         {curr === "Posts" ? (
           <Posts onProfile={true} username={username} />
         ) : null}
-        {curr === "Followings" ? <Followings username={username} /> : null}
-        {curr === "Followers" ? <div>Followers</div> : null}
+        {curr === "Followings" ? (
+          <FollowList username={username} curr={curr} />
+        ) : null}
+        {curr === "Followers" ? (
+          <FollowList username={username} curr={curr} />
+        ) : null}
       </div>
     </>
   );
