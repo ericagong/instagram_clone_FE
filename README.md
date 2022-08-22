@@ -45,8 +45,13 @@
 [x] get info
 [x] get posts
 [x] get following
-[ ] get followers
+[x] get followers
 
 ### Search
 
 [ ] get search result
+
+#### To Dos
+
+[ ] Post Create with redux store?
+[ ] Post delete at upper component -> move show more button!
