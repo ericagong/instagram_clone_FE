@@ -42,8 +42,8 @@
 
 ### Profile
 
-[ ] get info
-[ ] get posts
+[x] get info
+[x] get posts
 [ ] get following
 [ ] get followers
 

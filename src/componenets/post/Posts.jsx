@@ -87,7 +87,7 @@ const Posts = ({ onProfile, username }) => {
       const { posts, ...rest } = output;
 
       setAllPosts([...allPosts, ...posts]);
-      setPageInfo({ pageInfo, ...rest });
+      setPageInfo({ ...pageInfo, ...rest });
     }
   };
 

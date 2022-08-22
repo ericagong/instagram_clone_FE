@@ -758,14 +758,14 @@ const RESP = {
         ],
       },
     },
-    GET_POST_FAIL: {
+    GET_POSTS_FAIL: {
       result: false,
       status: {
         code: 401,
         message: "No right to get posts.",
       },
     },
-    GET_FOLLOWING_SUCCESS: {
+    GET_FOLLOWINGS_SUCCESS: {
       result: true,
       status: {
         code: 200,
@@ -775,42 +775,43 @@ const RESP = {
         currpage: 1,
         totalpage: 2,
         currcontent: 5,
+        totalelements: 50,
         isme: false,
         following: [
           {
-            username: "erica",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            username: "maybe",
+            userprfoile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 5,
             numfollowers: 16,
           },
           {
             username: "Eunchae",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 5,
             numfollowers: 10,
           },
           {
             username: "john",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 50,
             numfollowers: 30,
           },
           {
             username: "test1",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 0,
             numfollowers: 0,
           },
           {
             username: "test2",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 5,
             numfollowers: 16,
           },
         ],
       },
     },
-    GET_MY_FOLLOWING_SUCCESS: {
+    GET_MY_FOLLOWINGS_SUCCESS: {
       result: true,
       status: {
         code: 200,
@@ -820,42 +821,43 @@ const RESP = {
         currpage: 1,
         totalpage: 2,
         currcontent: 5,
+        totalelements: 50,
         isme: true,
         following: [
           {
-            username: "erica",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            username: "maybe",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 5,
             numfollowers: 16,
           },
           {
             username: "Eunchae",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 5,
             numfollowers: 10,
           },
           {
             username: "john",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 50,
             numfollowers: 30,
           },
           {
             username: "test1",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 0,
             numfollowers: 0,
           },
           {
             username: "test2",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 5,
             numfollowers: 16,
           },
         ],
       },
     },
-    GET_FOLLOWING_FAIL: {
+    GET_FOLLOWINGS_FAIL: {
       result: false,
       status: {
         code: 401,
@@ -872,35 +874,36 @@ const RESP = {
         currpage: 1,
         totalpage: 2,
         currcontent: 5,
+        totalelements: 50,
         isme: false,
         followers: [
           {
             username: "erica",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 5,
             numfollowers: 16,
           },
           {
             username: "Eunchae",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 5,
             numfollowers: 10,
           },
           {
             username: "john",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 50,
             numfollowers: 30,
           },
           {
             username: "test1",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 0,
             numfollowers: 0,
           },
           {
             username: "test2",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 5,
             numfollowers: 16,
           },
@@ -918,34 +921,35 @@ const RESP = {
         totalpage: 2,
         currcontent: 5,
         isme: true,
+        totalelements: 50,
         followers: [
           {
             username: "erica",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 5,
             numfollowers: 16,
           },
           {
             username: "Eunchae",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 5,
             numfollowers: 10,
           },
           {
             username: "john",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 50,
             numfollowers: 30,
           },
           {
             username: "test1",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 0,
             numfollowers: 0,
           },
           {
             username: "test2",
-            userpfoile: "https://joeschmoe.io/api/v1/random",
+            userprofile: "https://joeschmoe.io/api/v1/random",
             numfollowing: 5,
             numfollowers: 16,
           },
