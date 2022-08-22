@@ -76,17 +76,19 @@ const Following = ({
             <div>Following {numfollowing}</div>
             <div>Followers {numfollowers}</div>
           </div>
-          <div>
-            {!isFollowing ? (
-              <button type='button' onClick={toggleFollow}>
-                Unfollow
-              </button>
-            ) : (
-              <button type='button' onClick={toggleFollow}>
-                Follow
-              </button>
-            )}
-          </div>
+          {isme ? (
+            <div>
+              {!isFollowing ? (
+                <button type='button' onClick={toggleFollow}>
+                  Unfollow
+                </button>
+              ) : (
+                <button type='button' onClick={toggleFollow}>
+                  Follow
+                </button>
+              )}
+            </div>
+          ) : null}
         </div>
       </div>
     </>
